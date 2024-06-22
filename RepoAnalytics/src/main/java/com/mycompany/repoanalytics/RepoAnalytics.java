@@ -7,9 +7,15 @@ import java.net.URL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
+import io.github.cdimascio.dotenv.Dotenv;
+
 public class RepoAnalytics 
 {
-    private static final String TOKEN = "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";
+    Dotenv dotenv = Dotenv.load();
+    String API_TOKEN = dotenv.get("API_TOKEN");
+    //private static final String API_TOKEN = "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";
 
     public void getRepoLanguages(String username, String repoName) throws Exception 
     {
@@ -89,7 +95,7 @@ public class RepoAnalytics
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
-        connection.setRequestProperty("Authorization", "token " + TOKEN);
+        connection.setRequestProperty("Authorization", "token " + API_TOKEN);
         connection.setRequestProperty("Accept", "application/vnd.github.v3+json");
 
         int responseCode = connection.getResponseCode();
