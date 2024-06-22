@@ -9,13 +9,12 @@ import org.json.JSONObject;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-import io.github.cdimascio.dotenv.Dotenv;
-
 public class RepoAnalytics 
 {
+    // Cargar el archivo .env
     Dotenv dotenv = Dotenv.load();
+    // Obtener el valor de la variable de entorno API_KEY
     String API_TOKEN = dotenv.get("API_TOKEN");
-    //private static final String API_TOKEN = "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";
 
     public void getRepoLanguages(String username, String repoName) throws Exception 
     {
