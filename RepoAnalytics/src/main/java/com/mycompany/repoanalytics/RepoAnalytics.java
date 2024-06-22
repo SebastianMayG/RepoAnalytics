@@ -49,7 +49,7 @@ public class RepoAnalytics
             String jsonResponse = sendGetRequest(url);
             JSONArray collaboratorsArray = new JSONArray(jsonResponse);
 
-            System.out.println("Colaboradores:");
+            System.out.println("Collaborators:");
             for (int i = 0; i < collaboratorsArray.length(); i++) 
             {
                 JSONObject collaborator = collaboratorsArray.getJSONObject(i);
